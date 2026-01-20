@@ -1,0 +1,58 @@
+What this mirrors in the job:
+You will build the mobile investor experience for Token Metrics vaults. This mirrors:
+React Native development with Web3 integration
+Privy wallet connection and transaction signing
+Handling blockchain states (pending, confirmed, failed) in mobile UI
+Building for iOS and Android simultaneously
+
+Goal:
+Build a React Native (Expo) app that connects a wallet, displays vault data, and completes an Approve → Deposit flow.
+Core Scope:
+1. Wallet connection (Privy or WalletConnect)
+"Connect Wallet" button
+Display connected address (truncated)
+Display USDC balance
+Persist connection across app restarts
+
+2. Vault display
+Show 3 vault cards: Stable, Growth, Turbo
+Each card shows:
+Name and risk level indicator
+Target APY range
+User's current balance (if any)
+TVL
+
+3. Deposit flow
+Amount input with quick buttons (25%, 50%, 75%, MAX)
+Show estimated shares to receive
+Approve → Deposit transaction sequence
+Loading states with haptic feedback
+Success state with confetti animation
+Error handling (user reject, tx revert, insufficient funds)
+
+4. Network handling
+Detect wrong network
+Prompt switch to HyperEVM (or testnet)
+Clear error if user stays on wrong network
+
+5. Portfolio view
+Show user's positions across all vaults
+Total USD value
+Individual vault breakdown
+
+Tech Requirements:
+Expo or bare React Native
+ethers.js or viem for Web3
+nativewind or StyleSheet for styling
+Must run on iOS simulator
+
+High-Signal Checkpoints:
+How you handle the async nature of blockchain transactions in mobile UI
+Error states and edge cases, not just happy path
+Whether the app feels native (not a web wrapper)
+
+Stretch Scope:
+Withdraw flow: Including pending state for locked funds
+Pull-to-refresh: Reload balances
+Transaction history: Show recent deposits/withdrawals from events
+TestFlight build: Provide a TestFlight link we can install
